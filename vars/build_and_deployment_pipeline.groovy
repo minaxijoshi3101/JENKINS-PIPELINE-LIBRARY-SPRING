@@ -1,3 +1,5 @@
+import com.seh.util.checkoutSCM;
+
 def call(Map pipelineParams)
 {
   try
