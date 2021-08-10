@@ -1,3 +1,5 @@
+package com.seh.studentCRUD
+
 def call(Map pipelineParams) 
 {
   if(pipelineParams.APP_TYPE == "java")
