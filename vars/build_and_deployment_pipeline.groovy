@@ -23,6 +23,10 @@ def call(Map pipelineParams)
           {
             new buildCompileApp().call(pipelineParams)
           }
+          stage("Deploy Application")
+          {
+            new deployApp().call(pipelineParams)
+          }
         }
       }
     }
