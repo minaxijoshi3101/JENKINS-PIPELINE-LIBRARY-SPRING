@@ -13,4 +13,19 @@ def call(Map pipelineParams)
   cp 
   '''
 }
+  else if(pipelineParams.APP_TYPE == "node")
+  {
+    sh '''
+    cd $REPO
+    sudo npm install
+    if [ $ENVIRONMENT == "dev" ]
+    then
+    sudo npm run build:deployment
+    else
+    sudo npm run build
+    fi
+    version=$(jq -r .version package.json)
+    sudo docker build -t ${DOCKER_REGISTRY}:$version .
+    '''
+  }
 }
