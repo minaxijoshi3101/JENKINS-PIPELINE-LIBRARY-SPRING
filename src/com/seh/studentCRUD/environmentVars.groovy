@@ -2,6 +2,7 @@ package com.seh.studentCRUD
 
 def call(Map pipelineParams) {
     env.REPO = pipelineParams.REPO
+    env.GIT_GROUP = pipelineParams.GIT_GROUP
     env.DOCKER_HOST = pipelineParams.DOCKER_HOST
     env.DOCKER_REGISTRY = pipelineParams.DOCKER_REGISTRY
     env.APP_NAME = pipelineParams.APP_NAME
