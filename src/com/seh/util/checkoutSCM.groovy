@@ -6,7 +6,7 @@ def call(Map pipelineParams)
   echo "code checkout from SCM"
   sh '''
   rm -rf ${REPO}
-  git clone --single-branch -branch ${BRANCH} ${SCM_URL}
+  git clone --single-branch --branch ${BRANCH} ${SCM_URL}
   '''
   echo "Checkout is completed successfuly!!!!"
 }
