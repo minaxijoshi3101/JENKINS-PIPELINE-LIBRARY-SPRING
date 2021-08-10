@@ -8,7 +8,7 @@ def call(Map pipelineParams)
   {
     timeout(time: 60,unit:"MINUTES")
     {
-      env.BRNACH = pipelineParams.BRANCH
+      env.BRANCH = pipelineParams.BRANCH
       env.REPO = pipelineParams.REPO
       pipeline
       {
