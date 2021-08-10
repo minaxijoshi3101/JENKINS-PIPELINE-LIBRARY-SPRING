@@ -1,5 +1,6 @@
 import com.seh.util.checkoutSCM;
 import com.seh.studentCRUD.buildCompileApp;
+import com.seh.studentCRUD.environmentVars;
 
 def call(Map pipelineParams)
 {
