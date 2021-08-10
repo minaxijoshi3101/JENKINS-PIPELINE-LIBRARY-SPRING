@@ -26,6 +26,9 @@ def call(Map pipelineParams)
     fi
     version=$(jq -r .version package.json)
     sudo docker build -t ${DOCKER_REGISTRY}:$version .
+     sudo docker build -t ${DOCKER_REGISTRY}:latest .
+     sudo docker push ${DOCKER_REGISTRY}:$version
+     sudo docker push ${DOCKER_REGISTRY}:latest
     '''
   }
 }
