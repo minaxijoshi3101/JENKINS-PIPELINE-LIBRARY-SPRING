@@ -10,7 +10,8 @@ def call(Map pipelineParams)
   sh '''
   cd $REPO
   mvn clean install
-  cp 
+  cp target/StudentCrud-${POM_VERSION}.jar .
+  
   '''
 }
   else if(pipelineParams.APP_TYPE == "node")
