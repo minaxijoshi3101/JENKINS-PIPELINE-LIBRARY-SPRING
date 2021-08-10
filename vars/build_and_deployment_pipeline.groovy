@@ -26,7 +26,9 @@ def call(Map pipelineParams)
       }
     }
   }
-  catch()
+  catch(Exception e)
   {
+    print "Error cause: ${e}"
+    error('Build stage - failed')
   }
 }
