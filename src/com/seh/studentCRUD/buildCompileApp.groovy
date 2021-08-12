@@ -11,7 +11,11 @@ def call(Map pipelineParams)
   cd $REPO
   mvn clean install
   cp target/StudentCrud-${POM_VERSION}.jar .
-  
+  sed -i "s;%VERSION%;${POM_VERSION};" Dockerfile
+  sudo docker build -t ${DOCKER_REGISTRY}:${POM_VERSION} .
+  sudo docker build -t ${DOCKER_REGISTRY}:latest .
+  sudo docker push ${DOCKER_REGISTRY}:${POM_VERSION}
+  sudo docker push ${DOCKER_REGISTRY}:latest
   '''
 }
   else if(pipelineParams.APP_TYPE == "node")
